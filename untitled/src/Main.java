@@ -60,7 +60,7 @@ public class Main {
             for (Task task : tasks) {
                 System.out.println(task);
             }*/
-        } catch (IOException e) {
+        } catch (IOException e ) {
             System.err.println(e.getMessage());
         } catch (NumberFormatException e) {
             System.err.println(e.getMessage());
@@ -107,7 +107,11 @@ public class Main {
                     long endQuick = System.nanoTime();
                     System.out.println("Time: " + ((endQuick - startQuick)/1000000) + "ms in " + file + " mode.");
                     break;
+                default:
+                    System.out.println("Invalid option");
+                    break;
             }
         } while (option != 5);
+
     }
 }

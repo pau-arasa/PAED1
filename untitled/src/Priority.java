@@ -14,7 +14,7 @@ public class Priority {
 
     //This function returns the number of days left until the task is due, divided by 10 to reduce its relevance
     public static float getDaysLeft(Task task){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-M-yy");
         LocalDate limitDate = LocalDate.parse(task.getLimit(), formatter);
         LocalDate currentDate = LocalDate.now();
 

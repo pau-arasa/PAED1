@@ -101,4 +101,33 @@ public class SortingUtils {
             cursor++;
         } while (cursor <= j);
     }
+    public static int partition(ArrayList<Task> tasks, int i, int j){
+        int left = i, right = j;
+        int half = (i+j)/2;
+        float pivot = Priority.getPriority(tasks.get(i));
+
+        while(true){
+            while(Priority.getPriority(tasks.get(left)) < pivot){
+                left++;
+            }
+            while(Priority.getPriority(tasks.get(right)) > pivot){
+                right--;
+            }
+            if ( left >= right){
+                return right;
+            }
+            swap(tasks, left, right);
+            left++;
+            right--;
+        }
+    }
+
+    public static void quickSort(ArrayList<Task> tasks, int i, int j){
+        if (i < j){
+            int p = partition(tasks, i, j);
+            quickSort(tasks, i, p);
+            quickSort(tasks, p + 1, j);
+        }
+    }
 }
+
