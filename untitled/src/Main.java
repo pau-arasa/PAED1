@@ -89,21 +89,21 @@ public class Main {
                 case 2:
                     System.out.println("Selection Sort");
                     long startSelection = System.nanoTime();
-                    SortingUtils.insertionSort(tasks);
+                    SortingUtils.selectionSort(tasks);
                     long endSelection = System.nanoTime();
                     System.out.println("Time: " + ((endSelection - startSelection)/1000000) + "ms in " + file + " mode.");
                     break;
                 case 3:
                     System.out.println("Merge Sort");
                     long startMerge = System.nanoTime();
-                    SortingUtils.mergeSort(tasks, 0, 999);
+                    SortingUtils.mergeSort(tasks, 0, 9999);
                     long endMerge = System.nanoTime();
                     System.out.println("Time: " + ((endMerge - startMerge)/1000000) + "ms in " + file + " mode.");
                     break;
                 case 4:
                     System.out.println("Quick Sort");
                     long startQuick = System.nanoTime();
-                    SortingUtils.insertionSort(tasks);
+                    SortingUtils.quickSort(tasks, 0, 9999);
                     long endQuick = System.nanoTime();
                     System.out.println("Time: " + ((endQuick - startQuick)/1000000) + "ms in " + file + " mode.");
                     break;

@@ -12,7 +12,7 @@ public class SortingUtils {
     public static void selectionSort(ArrayList<Task> tasks) {
         int i=0, min=0, j=0;
         //int n = tasks.size();
-        int n = 1000;
+        int n = 10000;
 
         for(i=0; i < n-1; i++) {
             min = i;
@@ -27,14 +27,11 @@ public class SortingUtils {
         }
     }
 
-
-
-
     public static void insertionSort(ArrayList<Task> tasks) {
         int n;
         int i, j;
         //n = tasks.size();
-        n = 1000;
+        n = 10000;
         for (i = 1; i < n; i++) {
             j = i;
             while (j > 0 && tasks.get(j).getName().compareTo(tasks.get(j - 1).getName()) < 0) {
@@ -45,7 +42,6 @@ public class SortingUtils {
         }
 
     }
-
 
     public static void mergeSort(ArrayList<Task> tasks, int i, int j) {
 
@@ -101,6 +97,7 @@ public class SortingUtils {
             cursor++;
         } while (cursor <= j);
     }
+
     public static int partition(ArrayList<Task> tasks, int i, int j){
         int left = i, right = j;
         int half = (i+j)/2;
