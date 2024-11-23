@@ -7,9 +7,10 @@ public class Priority {
     //This function returns the 'amount' of red in an Importance string, as a value from 0 to 10
     public static float getImportance(Task task){
         String importanceStr = task.getImportance();
-        float decimalValue = Integer.parseInt(importanceStr.substring(1, 3), 16);
+        float decimalRed = Integer.parseInt(importanceStr.substring(1, 3), 16) / 2.55f;
+        float decimalGreen = Integer.parseInt(importanceStr.substring(3, 5), 16) / 2.55f;
 
-        return decimalValue / 2.55f;
+        return 3 * (decimalRed - decimalGreen);
     }
 
     //This function returns the number of days left until the task is due, divided by 10 to reduce its relevance
