@@ -60,7 +60,7 @@ public class Main {
             for (Task task : tasks) {
                 System.out.println(task);
             }*/
-        } catch (IOException e ) {
+        } catch (IOException e) {
             System.err.println(e.getMessage());
         } catch (NumberFormatException e) {
             System.err.println(e.getMessage());
@@ -106,6 +106,30 @@ public class Main {
                     SortingUtils.quickSort(tasks, 0, 9999);
                     long endQuick = System.nanoTime();
                     System.out.println("Time: " + ((endQuick - startQuick)/1000000) + "ms in " + file + " mode.");
+
+                    break;
+                case 6:
+                    System.out.println("MergeSort sample");
+                    SortingUtils.quickSort(tasks, 0, 9);
+
+                    System.out.println("Sorted tasks:");
+                    for(int index = 0; index < 10; index++) {
+                        Task task = tasks.get(index);
+                        System.out.println(task + " | Priority: " + Priority.getPriority(task));
+                    }
+                    break;
+                case 7:
+                    System.out.println("QuickSort sample");
+                    SortingUtils.quickSort(tasks, 0, 49);
+
+                    System.out.println("Sorted tasks:");
+                    for(int index = 0; index < 10; index++) {
+                        Task task = tasks.get(index);
+                        System.out.println(task + " | Priority: " + Priority.getPriority(task));
+                    }
+                    break;
+                case 5:
+                    System.out.println("Exit");
                     break;
                 default:
                     System.out.println("Invalid option");
